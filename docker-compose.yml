@@ -4,7 +4,8 @@ services:
     ports:
       - "8501:8501"
     volumes:
-      - app_data:/app/data
+      - ./chat.db:/app/chat.db
+      - uploads_data:/app/data/uploads
     environment:
       - STREAMLIT_SERVER_HEADLESS=true
       - STREAMLIT_SERVER_ENABLE_CORS=false
@@ -16,4 +17,4 @@ services:
       retries: 3
 
 volumes:
-  app_data:
+  uploads_data:

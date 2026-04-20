@@ -209,8 +209,8 @@ __marimo__/
 # Streamlit secrets (contain credentials)
 .streamlit/secrets.toml
 
-# Runtime data
-data/
+# Runtime upload storage (persisted via Docker named volume)
+data/uploads/
 
 # Claude Code local settings
 .claude/settings.local.json

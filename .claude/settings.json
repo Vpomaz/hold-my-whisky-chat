@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '\"[\" + (now | strftime(\"%Y-%m-%d %H:%M:%S\")) + \"] \" + .prompt' >> /home/vpomaz/_prjcts/hold-my-whisky-chat/promt_history.txt"
+          }
+        ]
+      }
+    ]
+  }
+}

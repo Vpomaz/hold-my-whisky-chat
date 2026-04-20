@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Streamlit secrets (contain credentials)
+.streamlit/secrets.toml
+
+# Runtime data
+data/
+
+# Claude Code local settings
+.claude/settings.local.json

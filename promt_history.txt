@@ -1,0 +1,26 @@
+ai claude rule / each user typed promt should be stored in @promt_history.txt
+[2026-04-20 15:07:02] my last promt was not added to @promt_history.txt why?
+[2026-04-20 15:14:58] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/CLAUDE.md in the IDE. This may or may not be related to the current task.</ide_opened_file>
+generate the next project folder-file-structure
+app.py
+requrements.txt
+sql
+- init_schema.sql
+- data
+- - init_dummy_data.sql
+.streamlit
+- secrets.toml
+pages
+- about.py
+components
+services
+utils
+tests
+[2026-04-20 15:19:03] add docker compose file and create init commit for it
+[2026-04-20 15:24:39] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/CLAUDE.md in the IDE. This may or may not be related to the current task.</ide_opened_file>
+add embeded db file as chat.db
+init code from @sql/init_schema.sql 
+connect application from compose to chat.db via toml secret
+[2026-04-20 15:27:18] init scripts from @sql/data/init_dummy_data.sql for @chat.db
+[2026-04-20 15:28:23] commit all changes with message 
+init app v0.0.0

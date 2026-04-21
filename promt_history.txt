@@ -77,3 +77,11 @@ carol@example.com / password123
 validate and fix auth process with creds above
 [2026-04-21 15:19:28] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/pages/admin.py in the IDE. This may or may not be related to the current task.</ide_opened_file>
 run @.claude/commands/add-tests.md
+[2026-04-21 15:32:14] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/2026_04_18_AI_herders_jam_-_requirements_v3 1.txt in the IDE. This may or may not be related to the current task.</ide_opened_file>
+add claude command - fire to repo
+this command include the next list of steps:
+- check changes
+- run skill add-tests
+- add changes to git
+- commit changes with short (between 5 and 13 words) description
+[2026-04-21 15:34:50] run command /fire

@@ -148,3 +148,36 @@ user navigation add implementations
 - sessions - should be opened modal window with section 2.2 from @2026_04_18_AI_herders_jam_-_requirements_v3 1.txt  
 - Profile - should be opened modal window with user preferences and settings such as changing email, username, password
 [2026-04-21 18:25:01] /fire
+[2026-04-21 18:25:01] /fire
+[2026-04-21 18:46:51] <ide_selection>The user selected the lines 20 to 20 from /home/vpomaz/_prjcts/hold-my-whisky-chat/README.md:
+Tasks to be finished
+
+This may or may not be related to the current task.</ide_selection>
+@2026_04_18_AI_herders_jam_-_requirements_v3 1.txt 
+analyse all sections from 1. till 5 based on project codebase.
+eg, 2.1.1, 2.1.2, 2.1.3 etc.
+and provide short report for not-impleneted features
+as markdown table with columns
+index, section number, feature (less 7 words), notes
+
+add markdown table to @README.md  to section
+Tasks to be finished
+
+[2026-04-21 19:04:47] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/README.md in the IDE. This may or may not be related to the current task.</ide_opened_file>
+create skill named 'make_task' with parameter
+parameter has mask x.y.z
+where x,y.z are number related to features from section Tasks not - finished of
+@README.md  
+
+when skill is triggered then do next list of steps
+1. analyse notes from related by mask section Tasks not - finished of
+@README.md  
+2. add implementation to resolve task
+3. add tests with coverage more then 75%
+4. remove task from section Tasks not - finished of
+@README.md   and update indexes
+5. run command 'fire'
+4. run command 'fire' to finish
+[2026-04-21 19:06:23] /make_task 2.1.4 MOCKED
+[2026-04-21 20:21:18] collect total duration between user promt timestamp from @promt_history.txt 
+and convert to X hours Y minutes

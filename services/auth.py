@@ -21,9 +21,9 @@ def register_user(conn: sqlite3.Connection, email: str, username: str, password:
 
 def authenticate(conn: sqlite3.Connection, email: str, password: str) -> dict | None:
     row = conn.execute(
-        "SELECT id, username, password_hash FROM users WHERE email = ? AND deleted_at IS NULL",
+        "SELECT id, username, password_hash, role FROM users WHERE email = ? AND deleted_at IS NULL",
         (email,),
     ).fetchone()
     if row and verify_password(password, row["password_hash"]):
-        return {"id": row["id"], "username": row["username"]}
+        return {"id": row["id"], "username": row["username"], "role": row["role"]}
     return None

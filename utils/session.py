@@ -1,10 +1,9 @@
 import streamlit as st
 
 
-def require_auth() -> None:
-    """Redirect to login if no active session."""
-    if "user_id" not in st.session_state:
-        st.switch_page("pages/login.py")
+def redirect_by_role() -> None:
+    """Re-run so app.py routes to the correct page for the current role."""
+    st.rerun()
 
 
 def current_user_id() -> int:
@@ -13,3 +12,7 @@ def current_user_id() -> int:
 
 def current_username() -> str:
     return st.session_state["username"]
+
+
+def current_user_role() -> str:
+    return st.session_state.get("role", "user")

@@ -38,3 +38,31 @@ each time when code is changed in file the next list of folders
  @components/  @pages/  @services/ @utils/  only
 [2026-04-21 14:02:30] main rule for skill /add-tests
 test coverage for files should be 75% and more
+[2026-04-21 14:12:14] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/components/sidebar.py in the IDE. This may or may not be related to the current task.</ide_opened_file>
+add to @components/ file navigation.py
+which represents different horisontal top menu for different pages
+- for @pages/login.py  includes logo, sign-in, register buttons
+- for @pages/admin.py includes logo, selectbox manage-room, signout button
+- for @pages/user.py includes logo, public rooms, private rooms, contacts, Sessions, Profile, signout button
+[2026-04-21 14:54:08] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/components/navigation.py in the IDE. This may or may not be related to the current task.</ide_opened_file>
+@pages/login.py 
+page should includes top-nav bar and main layout
+
+nav bar from @components/navigation.py 
+
+main layout includes sign in form (email field, password field, keep me signed in checkbox, sign-in button, forgot password modal)
+
+forgot password modal window should be mocked to send email ONLY via enater your email to reset password field and send reset link button
+
+button register from navbar should open modal window with register form (email, username, password, confirm password fields and create accout button)
+[2026-04-21 15:01:00] <ide_selection>The user selected the lines 21 to 21 from /home/vpomaz/_prjcts/hold-my-whisky-chat/CLAUDE.md:
+docker compose up --build
+
+This may or may not be related to the current task.</ide_selection>
+pages @pages/about.py and @pages/login.py 
+after success sign in user with role USER should be authenticated and see @pages/user.py page only
+if user authenticated with role ADMIN the he should see @pages/admin.py only
+[2026-04-21 15:07:42] upgrade @chat.db  with new @sql/init_schema.sql  and @sql/data/init_dummy_data.sql
+[2026-04-21 15:09:04] clear from side bar all pages except about and login before auth
+
+and remove whole side bar after auth and show relevant page for user/admin

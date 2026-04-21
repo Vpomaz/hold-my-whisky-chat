@@ -24,3 +24,17 @@ connect application from compose to chat.db via toml secret
 [2026-04-20 15:27:18] init scripts from @sql/data/init_dummy_data.sql for @chat.db
 [2026-04-20 15:28:23] commit all changes with message 
 init app v0.0.0
+[2026-04-20 15:28:54] run app via compose
+[2026-04-20 15:31:16] push branch to repo
+[2026-04-20 15:31:31] stop docker
+[2026-04-21 12:57:10] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/components/sidebar.py in the IDE. This may or may not be related to the current task.</ide_opened_file>
+add empty (without implementation) files to @pages/ 
+login.py
+user.py
+admin.py
+[2026-04-21 14:00:11] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/2026_04_18_AI_herders_jam_-_requirements_v3 1.txt in the IDE. This may or may not be related to the current task.</ide_opened_file>
+create claude skill which add tests to folder @tests/ 
+each time when code is changed in file the next list of folders
+ @components/  @pages/  @services/ @utils/  only
+[2026-04-21 14:02:30] main rule for skill /add-tests
+test coverage for files should be 75% and more

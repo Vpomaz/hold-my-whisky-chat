@@ -66,3 +66,14 @@ if user authenticated with role ADMIN the he should see @pages/admin.py only
 [2026-04-21 15:09:04] clear from side bar all pages except about and login before auth
 
 and remove whole side bar after auth and show relevant page for user/admin
+[2026-04-21 15:15:35] <ide_selection>The user selected the lines 6 to 6 from /home/vpomaz/_prjcts/hold-my-whisky-chat/sql/data/init_dummy_data.sql:
+carol@example.com
+
+This may or may not be related to the current task.</ide_selection>
+can not login with any creds
+alice@example.com / password123
+bob@example.com / password123
+carol@example.com / password123
+validate and fix auth process with creds above
+[2026-04-21 15:19:28] <ide_opened_file>The user opened the file /home/vpomaz/_prjcts/hold-my-whisky-chat/pages/admin.py in the IDE. This may or may not be related to the current task.</ide_opened_file>
+run @.claude/commands/add-tests.md

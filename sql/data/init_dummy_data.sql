@@ -1,9 +1,9 @@
 -- Passwords are bcrypt of "password123"
 -- alice = admin, bob + carol = user
 INSERT OR IGNORE INTO users (id, email, username, password_hash, role) VALUES
-(1, 'alice@example.com', 'alice', '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW', 'admin'),
-(2, 'bob@example.com',   'bob',   '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW', 'user'),
-(3, 'carol@example.com', 'carol', '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW', 'user');
+(1, 'alice@example.com', 'alice', '$2b$12$5jum.1fTdO.ga71zYbeeV.f2jEWbjXeAZZ0xDanAWPgU3zwV5trwW', 'admin'),
+(2, 'bob@example.com',   'bob',   '$2b$12$5jum.1fTdO.ga71zYbeeV.f2jEWbjXeAZZ0xDanAWPgU3zwV5trwW', 'user'),
+(3, 'carol@example.com', 'carol', '$2b$12$5jum.1fTdO.ga71zYbeeV.f2jEWbjXeAZZ0xDanAWPgU3zwV5trwW', 'user');
 
 INSERT OR IGNORE INTO rooms (id, name, description, visibility, owner_id) VALUES
 (1, 'general',     'General discussion',  'public',  1),

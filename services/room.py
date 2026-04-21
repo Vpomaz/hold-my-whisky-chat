@@ -141,6 +141,40 @@ def delete_room_by_id(conn: sqlite3.Connection, room_id: int) -> None:
     conn.commit()
 
 
+def join_room(conn: sqlite3.Connection, room_id: int, user_id: int) -> None:
+    conn.execute(
+        "INSERT OR IGNORE INTO room_members (room_id, user_id, role) VALUES (?, ?, 'member')",
+        (room_id, user_id),
+    )
+    conn.commit()
+
+
+def leave_room(conn: sqlite3.Connection, room_id: int, user_id: int) -> None:
+    conn.execute(
+        "DELETE FROM room_members WHERE room_id=? AND user_id=?",
+        (room_id, user_id),
+    )
+    conn.commit()
+
+
+def get_member_role(conn: sqlite3.Connection, room_id: int, user_id: int) -> str | None:
+    row = conn.execute(
+        "SELECT role FROM room_members WHERE room_id=? AND user_id=?",
+        (room_id, user_id),
+    ).fetchone()
+    return row["role"] if row else None
+
+
+def is_banned_from_room(conn: sqlite3.Connection, room_id: int, user_id: int) -> bool:
+    return (
+        conn.execute(
+            "SELECT 1 FROM room_bans WHERE room_id=? AND user_id=?",
+            (room_id, user_id),
+        ).fetchone()
+        is not None
+    )
+
+
 def get_public_rooms(conn: sqlite3.Connection, search: str = "") -> list:
     query = """
         SELECT r.id, r.name, r.description, COUNT(rm.user_id) AS member_count

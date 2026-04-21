@@ -98,7 +98,8 @@ CREATE TABLE IF NOT EXISTS attachments (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     message_id  INTEGER NOT NULL REFERENCES messages(id) ON DELETE CASCADE,
     original_name TEXT NOT NULL,
-    stored_path TEXT NOT NULL,
+    stored_path TEXT NOT NULL DEFAULT '',
+    data        TEXT,                        -- base64-encoded content stored in DB
     mime_type   TEXT,
     file_size   INTEGER NOT NULL,
     comment     TEXT,

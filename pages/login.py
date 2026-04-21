@@ -1,6 +1,7 @@
 import streamlit as st
 from components.navigation import nav_login
 from services.auth import authenticate, register_user
+from services.session_mgr import create_session
 from utils.db import get_db
 from utils.session import redirect_by_role
 
@@ -51,12 +52,19 @@ with col:
     keep_signed_in = st.checkbox("Keep me signed in")
 
     if st.button("Sign in", type="primary", use_container_width=True):
-        user = authenticate(get_db(), email, password)
+        db = get_db()
+        user = authenticate(db, email, password)
         if user:
             st.session_state["user_id"] = user["id"]
             st.session_state["username"] = user["username"]
             st.session_state["role"] = user["role"]
             st.session_state["keep_signed_in"] = keep_signed_in
+            try:
+                ua = st.context.headers.get("User-Agent", "")
+            except Exception:
+                ua = ""
+            sid = create_session(db, user["id"], user_agent=ua)
+            st.session_state["session_id"] = sid
             redirect_by_role()
         else:
             st.error("Invalid email or password.")

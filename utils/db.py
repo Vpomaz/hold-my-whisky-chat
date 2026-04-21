@@ -16,3 +16,9 @@ def get_db() -> sqlite3.Connection:
 def _apply_schema(conn: sqlite3.Connection) -> None:
     with open("sql/init_schema.sql") as f:
         conn.executescript(f.read())
+    # Migration: add base64 data column to attachments for existing databases
+    try:
+        conn.execute("ALTER TABLE attachments ADD COLUMN data TEXT")
+        conn.commit()
+    except Exception:
+        pass

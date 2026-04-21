@@ -206,9 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Streamlit secrets (contain credentials)
-.streamlit/secrets.toml
-
 # Runtime upload storage (persisted via Docker named volume)
 data/uploads/
 

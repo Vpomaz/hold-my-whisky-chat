@@ -1,6 +1,6 @@
 import streamlit as st
 
-LOGO = "🥃 Hold My Whisky"
+LOGO = "🥃 Hold My Whisky Chat"
 
 
 def nav_login() -> str | None:
@@ -48,15 +48,18 @@ def nav_user() -> str | None:
     return action
 
 
-def nav_admin() -> str | None:
-    """Top bar for admin.py. Returns selected room name or 'signout'."""
+def nav_admin(rooms: list | None = None) -> str | None:
+    """Top bar for admin.py. Returns 'signout' or None."""
     col_logo, col_room, col_spacer, col_signout = st.columns([3, 4, 3, 1])
     action = None
     with col_logo:
         st.markdown(f"### {LOGO}")
     with col_room:
-        rooms = st.session_state.get("admin_rooms", [])
-        st.selectbox("Manage room", options=rooms, key="admin_selected_room")
+        room_names = [r["name"] for r in rooms] if rooms else []
+        if room_names:
+            st.selectbox("Manage room", options=room_names, key="admin_selected_room")
+        else:
+            st.caption("No rooms available")
     with col_signout:
         if st.button("Sign out", use_container_width=True):
             action = "signout"
